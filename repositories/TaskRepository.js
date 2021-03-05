@@ -1,26 +1,26 @@
-const Task = require('../models/task');
+const Task = require("../models/Task");
 
 class TaskRepository {
-  _task = null;
+  _tasks = null;
 
   constructor() {
-    this._task = [];
+    this._tasks = [];
   }
 
-  getAlltasks() {
+  getAlltasks() {}
 
-  }
-
-  createTask(title){
+  /**
+   ** @param {String} title
+   * TODO: Nos falta persistir datos en archivo
+   *
+   */
+  createTask(title) {
     const task = new Task(title);
+    this._tasks.push(task);
+    return this._tasks;
   }
 
-  deleteTask() {
+  deleteTask() {}
 
-  }
-
-  completeTask() {
-    
-  }
-  
+  completeTask() {}
 }
