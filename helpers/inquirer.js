@@ -16,6 +16,10 @@ const menu = [
         value: 2,
         name: `${"2-".blue} Get Tasks`,
       },
+      {
+        value: "X",
+        name: `${"0-".blue} Salir`,
+      },
     ],
   },
 ];
@@ -30,6 +34,21 @@ const inquirerMenu = async () => {
   return option;
 };
 
+const inquirerInput = async (message) => {
+  const question = [
+    {
+      type: "input",
+      name: "description",
+      message,
+    },
+  ];
+
+  const { description } = await inquirer.prompt(question);
+
+  return description;
+};
+
 module.exports = {
   inquirerMenu,
+  inquirerInput,
 };
